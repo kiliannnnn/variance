@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variance</title>
+    <link rel="stylesheet" href="style/variance.css">
+</head>
+
+<body>
+    <section>
+        <div id="variance">
+            <button type="button" id="left_side" onclick="giveToLeftSide()">a</button>
+            <button type="button" id="right_side" onclick="giveToRightSide()">b</button>
+        </div>
+        <div id="interface_container_outer">
+            <div id="interface_container_inner">
+                <label for="input"></label>
+                <input type="number" title="input" id="user_input">
+                <div id="interface_buttons">
+                    <button type="button" id="interface_left_side" onclick="giveToLeftSide()">&larr;</button>
+                    <button type="button" id="interface_reset" onclick="reset()">&orarr;</button>
+                    <button type="button" id="interface_right_side" onclick="giveToRightSide()">&rarr;</button>
+                </div>
+            </div>
+            <div id="left_side_params">
+                <input onchange="changeColorLeftSide()" type="color" title="left_side_color" id="left_side_color_param">
+            </div>
+            <div id="right_side_params">
+                <input onchange="changeColorRightSide()" type="color" title="right_side_color"
+                    id="right_side_color_param">
+            </div>
+        </div>
+    </section>
+    <script src="js/variance.js"></script>
+</body>
+
+</html>
