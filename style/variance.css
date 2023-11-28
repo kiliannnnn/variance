@@ -21,7 +21,7 @@ section {
     height: 100%;
     width: 50%;
     float: left;
-    background-color: #b81212;
+    background-color: rgb(238, 209, 25);
     transition: all 0.4s ease-out;
 }
 
@@ -29,7 +29,7 @@ section {
     height: 100%;
     width: 50%;
     float: right;
-    background-color: rgb(24, 150, 182);
+    background-color: rgb(182, 24, 24);
     transition: all 0.4s ease-out;
 }
 
