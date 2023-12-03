@@ -5,9 +5,12 @@ userInput.focus();
 
 var leftSide = document.getElementById("left_side");
 var leftSideColorInput = document.getElementById("left_side_color_param");
+var leftP = leftSide.firstChild;
+console.log(leftP);
 
 var rightSide = document.getElementById("right_side");
 var rightSideColorInput = document.getElementById("right_side_color_param");
+var rightP = rightSide.firstChild;
 
 
 function changeColorLeftSide() {
@@ -25,8 +28,8 @@ function reset() {
     leftSide.style.width = 50 + "%";
     rightSide.style.width = 50 + "%";
 
-    leftSide.innerHTML = 0 + "%";
-    rightSide.innerHTML = 0 + "%";
+    leftP.textContent = "0%";
+    rightP.textContent = "0%";
 }
 
 function giveToLeftSide() {
@@ -42,6 +45,11 @@ function giveToLeftSide() {
         rightPercent = 100 - leftPercent;
         refreshDisplay();
     }
+
+    leftP.classList.add("spin");
+    setTimeout(function () {
+        leftP.classList.remove("spin");
+    }, 1000);
 }
 
 function giveToRightSide() {
@@ -57,14 +65,22 @@ function giveToRightSide() {
         leftPercent = 100 - rightPercent;
         refreshDisplay();
     }
+
+    rightP.classList.add("spin");
+    setTimeout(function () {
+        rightP.classList.remove("spin");
+    }, 1000);
 }
 
 function refreshDisplay() {
     leftSide.style.width = leftPercent + "%";
     rightSide.style.width = rightPercent + "%";
 
-    leftSide.innerHTML = leftPercent + "%<br>" + user + "/" + total;
-    rightSide.innerHTML = rightPercent + "%<br>" + opponent + "/" + total;
+    leftPercent = Math.round(leftPercent * 100) / 100;
+    rightPercent = Math.round(rightPercent * 100) / 100;
+
+    leftP.innerHTML = leftPercent + "%<br>" + user + "/" + total;
+    rightP.innerHTML = rightPercent + "%<br>" + opponent + "/" + total;
 
     userInput.focus();
 }

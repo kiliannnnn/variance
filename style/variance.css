@@ -5,9 +5,6 @@ body {
 section {
     width: 100vw;
     height: 100vh;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
 #variance {
@@ -18,19 +15,116 @@ section {
 }
 
 #left_side {
-    height: 100%;
-    width: 50%;
     float: left;
     background-color: rgb(238, 209, 25);
-    transition: all 0.4s ease-out;
 }
 
 #right_side {
-    height: 100%;
-    width: 50%;
     float: right;
     background-color: rgb(182, 24, 24);
+}
+
+#left_side,
+#right_side {
+    height: 100%;
+    width: 50%;
     transition: all 0.4s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+#left_side:hover {
+    opacity: 0.9;
+}
+
+#left_side:hover p {
+    font-size: 2em;
+}
+
+#right_side:hover {
+    opacity: 0.9;
+}
+
+#right_side:hover p {
+    font-size: 2em;
+}
+
+.spin {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 300ms;
+    -webkit-animation-timing-function: ease-in-out;
+
+    -moz-animation-name: spin;
+    -moz-animation-duration: 300ms;
+    -moz-animation-timing-function: ease-in-out;
+
+    -ms-animation-name: spin;
+    -ms-animation-duration: 300ms;
+    -ms-animation-timing-function: ease-in-out;
+
+    -o-animation-name: spin;
+    -o-animation-duration: 300ms;
+    -o-animation-timing-function: ease-in-out;
+
+    animation-name: spin;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+}
+
+@-moz-keyframes spin {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes spin {
+    from {
+        -ms-transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spin {
+    from {
+        -o-transform: rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
 }
 
 #interface_container_outer {
@@ -62,6 +156,7 @@ section {
     top: 0;
     left: 0;
 }
+
 #right_side_params {
     z-index: 1;
     position: absolute;
